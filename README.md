@@ -3,6 +3,14 @@
 
 This repository contains starter code for the **Software Engineering for Data Scientists** final project. Please reference your course materials for documentation on this repository's structure and important files. Happy coding!
 
+## CI/CD Status
+
+This project uses GitHub Actions for continuous integration and continuous deployment:
+- **Tests**: Automated testing with pytest
+- **Linting**: Code quality checks with flake8
+
+All workflows run automatically on push and pull request events to the main branch.
+
 ### Repository Structure
 ```
 ├── README.md
