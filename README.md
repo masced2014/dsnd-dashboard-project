@@ -78,4 +78,5 @@ erDiagram
   team ||--o{ employee_events : "team_id"
   employee ||--o{ employee_events : "employee_id"
   notes }o--o{ employee_events : ""
+
 ```
