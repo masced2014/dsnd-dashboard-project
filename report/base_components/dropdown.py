@@ -11,8 +11,17 @@ class Dropdown(BaseComponent):
 
     def build_component(self, entity_id, model):
         options = []
-        for text, value in self.component_data(entity_id, model):
-            option = Option(text, value=value, selected="selected" if str(value) == entity_id else "")
+        data_items = self.component_data(entity_id, model)
+        for idx, (text, value) in enumerate(data_items):
+            # Select first option if entity_id is None, otherwise match entity_id
+            is_selected = (entity_id is None and idx == 0) or (str(value) == entity_id)
+            
+            # Build option kwargs conditionally
+            option_kwargs = {'value': value}
+            if is_selected:
+                option_kwargs['selected'] = True
+            
+            option = Option(text, **option_kwargs)
             options.append(option)
 
 
